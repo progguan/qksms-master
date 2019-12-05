@@ -24,6 +24,7 @@ import com.moez.QKSMS.service.HeadlessSmsSendService
 import com.moez.QKSMS.receiver.SendSmsReceiver
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
+import javax.inject.Scope
 
 @Module
 abstract class ServiceBuilderModule {

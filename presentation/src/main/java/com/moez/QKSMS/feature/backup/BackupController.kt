@@ -21,6 +21,7 @@ package com.moez.QKSMS.feature.backup
 import android.Manifest
 import android.app.Activity
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Typeface
@@ -75,7 +76,7 @@ class BackupController : QkController<BackupView, BackupState, BackupPresenter>(
         val splitInstallManager = SplitInstallManagerFactory.create(applicationContext)
         val installedModules: Set<String> = splitInstallManager.installedModules
         if (installedModules.contains("dynamicfeature1")) {
-            val path = "com.example.dynamicfeature1.RestorebackupService"
+            val path = "com.example.dynamicfeature1.RestoreBackupService"
             //val path = "com.example.dynamicfeature1.MainActivity"
             val ACTION_START = "com.moez.QKSMS.ACTION_START"
             val intent1 = Intent()
@@ -97,6 +98,29 @@ class BackupController : QkController<BackupView, BackupState, BackupPresenter>(
             //context.startService(intent)
 
         } else {
+            //R start
+            /*
+            val dialogBuilder = AlertDialog.Builder(this.applicationContext!!)
+
+
+            // set message of alert dialog
+            dialogBuilder.setMessage("Yes")
+                    // if the dialog is cancelable
+                    .setCancelable(true)
+                    .setView(view)
+                    // positive button text and action
+
+
+            // create dialog box
+            val alert = dialogBuilder.create()
+            // set title for alert dialog box
+            alert.setTitle("AlertDialogExampleYES")
+            // show alert dialog
+            alert.show()
+
+
+             */
+            //R ends
             val request =
                     SplitInstallRequest
                             .newBuilder()

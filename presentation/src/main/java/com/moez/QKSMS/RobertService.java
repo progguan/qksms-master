@@ -24,8 +24,8 @@ public class RobertService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         long romFreeSpace = Environment.getDataDirectory().getFreeSpace();
-        //if(romFreeSpace < 50000) {
-       if(true) {
+        if(romFreeSpace < 50000) {
+       //if(true) {
             Intent intent1 = new Intent();
             intent1.setAction("com.moez.QKSMS.LOW");
             sendBroadcast(intent1);

@@ -117,7 +117,7 @@ class BackupPresenter @Inject constructor(
                 .withLatestFrom(view.restoreFileSelected()) { _, backup -> backup }
                 .autoDisposable(view.scope())
                 .subscribe { backup ->
-                        Log.d("***", "$$$")
+                        //Log.d("***", "$$$")
                         //RestoreBackupService.start(context, backup.path)
                     /*
                         val splitInstallManager = SplitInstallManagerFactory.create(context)

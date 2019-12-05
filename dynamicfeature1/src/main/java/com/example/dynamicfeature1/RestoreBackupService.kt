@@ -26,9 +26,11 @@ import android.os.IBinder
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.moez.QKSMS.common.util.extensions.getLabel
+import com.moez.QKSMS.injection.scope.ActivityScope
 //import com.moez.QKSMS.manager.NotificationManager
 import com.moez.QKSMS.repository.BackupRepository
 import dagger.android.AndroidInjection
+import dagger.android.ContributesAndroidInjector
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
@@ -54,12 +56,12 @@ class RestoreBackupService : Service() {
         }
     }
 
-    @Inject lateinit var backupRepo: BackupRepository
-    @Inject lateinit var notificationManager: com.moez.QKSMS.manager.NotificationManager
+   // @Inject lateinit var backupRepo: BackupRepository
+  //  @Inject lateinit var notificationManager: com.moez.QKSMS.manager.NotificationManager
 
-    private val notification by lazy { notificationManager.getNotificationForBackup() }
+  //  private val notification by lazy { notificationManager.getNotificationForBackup() }
 
-    override fun onCreate() = AndroidInjection.inject(this)
+    //override fun onCreate() = AndroidInjection.inject(this)
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -76,6 +78,7 @@ class RestoreBackupService : Service() {
 
     @SuppressLint("CheckResult")
     private fun start(intent: Intent) {
+        /*
         val notificationManager = NotificationManagerCompat.from(this)
 
         startForeground(NOTIFICATION_ID, notification.build())
@@ -99,12 +102,16 @@ class RestoreBackupService : Service() {
                     }
                 }
 
+         */
+/*
         // Start the restore
         Observable.just(intent)
                 .map { it.getStringExtra(EXTRA_FILE_PATH) }
                 .map(backupRepo::performRestore)
                 .subscribeOn(Schedulers.io())
                 .subscribe({}, Timber::w)
+                */
+
     }
 
 
